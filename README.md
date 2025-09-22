@@ -3,7 +3,7 @@
 본 프로젝트는 **MIT CSAIL의 [GazeCapture](https://github.com/CSAILVision/GazeCapture)** 데이터를 기반으로,  
 공식 공개 모델(PyTorch 구현)을 가져와 **파인튜닝(Fine-tuning)** 한 **시선 추적(Eye Tracking)** 모델입니다.  
 
-추가적으로, 데이터 수집 및 서버 전송 파이프라인을 구현하여 **실험 환경(WebSocket, AWS EC2 연동)**에서도 활용할 수 있도록 개발되었습니다.  
+추가적으로, 데이터 수집 및 서버 전송 파이프라인을 구현하여 프로젝트 환경(WebSocket, AWS EC2 연동)에서도 활용할 수 있도록 개발했습니다.  
 
 ---
 
