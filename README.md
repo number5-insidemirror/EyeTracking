@@ -9,7 +9,7 @@
 
 ## 📂 프로젝트 구조
 
-```text
+
 ├── train_itracker.py              # 학습 스크립트 (fine-tuning 코드 포함)
 ├── test_itracker.py               # 모델 테스트 스크립트
 ├── ITrackerModel.py               # 시선 추적 모델 정의 (CNN 기반, PyTorch)
