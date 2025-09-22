@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gaze Click</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: #111;
+    }
+    #button {
+      position: absolute;
+      width: 90vw;
+      height: 90vh;
+      top: 5vh;
+      left: 5vw;
+      background-color: #007BFF;
+      border-radius: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 4rem;
+      transition: background-color 0.2s;
+    }
+    #progress-ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 8px solid rgba(255,255,0,0.6);
+      width: 120px;
+      height: 120px;
+      pointer-events: none;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<div id="button">BIG BUTTON</div>
+<div id="progress-ring"></div>
+
+<script>
+  const button = document.getElementById('button');
+  const ring = document.getElementById('progress-ring');
+  let dwellStart = null;
+  let progress = 0;
+  const holdTime = 2000; // 2초
+
+  // 시선 위치 수신 (임시: 서버가 보내는 좌표라 가정)
+  const ws = new WebSocket("ws://localhost:8000/ws");
+
+  ws.onmessage = (event) => {
+    const { x, y } = JSON.parse(event.data);
+    const rect = button.getBoundingClientRect();
+
+    if (x >= rect.left && x <= rect.right && y >= rect.top && y <= rect.bottom) {
+      if (!dwellStart) dwellStart = performance.now();
+      const elapsed = performance.now() - dwellStart;
+      progress = Math.min(elapsed / holdTime, 1);
+
+      // 링 위치 & 표시
+      ring.style.left = (x - 60) + 'px';
+      ring.style.top = (y - 60) + 'px';
+      ring.style.display = 'block';
+      ring.style.borderImage = `conic-gradient(yellow ${progress * 360}deg, transparent 0deg) 1`;
+
+      if (progress >= 1) {
+        console.log("✅ CLICKED");
+        button.style.backgroundColor = '#28a745';
+        ring.style.display = 'none';
+        ws.send("clicked"); // 서버에 알림
+        dwellStart = null;
+        progress = 0;
+      }
+    } else {
+      dwellStart = null;
+      progress = 0;
+      ring.style.display = 'none';
+    }
+  };
+</script>
+</body>
+</html>
