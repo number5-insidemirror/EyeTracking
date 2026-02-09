@@ -157,10 +157,15 @@ K. Krafka*, A. Khosla*, P. Kellnhofer, H. Kannan, S. Bhandarkar, W. Matusik, A. 
 IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2016
 ```
 
-## Developer
+## 🧑‍💻 Developer
 
-- **dolmaroyujinpark** - [GitHub](https://github.com/dolmaroyujinpark)
+| Developer |
+| :--: |
+| <a href="https://github.com/dolmaroyujinpark"><img src="https://avatars.githubusercontent.com/dolmaroyujinpark" width="120px" alt="Park Yujin"/></a> |
+| **박유진** |
+| AI / Backend Developer |
+| [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/dolmaroyujinpark) |
 
-## License
+## 📄 License
 
 이 프로젝트는 GazeCapture Research License를 따릅니다. 자세한 내용은 [LICENSE.md](LICENSE.md)를 참조하세요. 연구 목적으로만 사용 가능합니다.
