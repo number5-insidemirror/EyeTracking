@@ -163,7 +163,6 @@ IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2016
 | :--: |
 | <a href="https://github.com/dolmaroyujinpark"><img src="https://avatars.githubusercontent.com/dolmaroyujinpark" width="120px" alt="Park Yujin"/></a> |
 | **박유진** |
-| AI / Backend Developer |
 | [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/dolmaroyujinpark) |
 
 ## 📄 License
